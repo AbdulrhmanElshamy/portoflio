@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #18181b;
+}
+
+
+.i-plain:hover {
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 60px 'Oswald', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+
+.genral {
+    width: 90%;
+    margin: auto;
+}
+
+
+/*start nav*/
+nav {
+    width: 100%;
+    z-index: 99999;
+    padding-inline: 5%;
+    padding-block: 10px;
+    background: transparent;
+}
+
+.nav-solid {
+    background-color: #18181b;
+}
+
+nav a,
+li {
+    font-size: 16px;
+    color: #a1a1aa;
+    transition: 0.4s;
+}
+
+
+nav li:hover {
+    text-decoration: underline white;
+    cursor: pointer;
+
+}
+
+
+#logo h1 {
+    font-family: 'Rock Salt', cursive;
+    color: white;
+}
+
+/*End nav*/
+
+
+/*start Home*/
+#Home {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#Pic {
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: auto;
+    margin-block: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#Pic::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(0deg, #18181b, transparent);
+}
+
+
+
+#Pic img {
+    animation: transform 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    height: 100%;
+}
+
+/*End Home*/
+
+
+/*start About*/
+
+#About {
+    padding-top: 20px;
+    margin: auto;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+
+#About .Aboutcard {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+#About .Aboutcard p {
+    max-width: 50%;
+    color: #a1a1aa;
+}
+
+#About .Aboutcard #AboutPic {
+
+    width: 40%;
+
+}
+
+#About .Aboutcard #AboutPic img {
+    width: 100%;
+    transform: translateX(87%);
+    transition: 1.5s;
+}
+
+/*End About*/
+
+
+
+/*start Services*/
+
+
+.services {
+    margin: auto;
+    text-align: center;
+}
+
+
+
+.services Section {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    justify-items: center;
+    grid-gap: 20px;
+}
+
+.services Section .card {
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: transparent;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.services Section .card .content {
+    transition: 0.3s;
+}
+
+.services Section .card:hover .content {
+    transform: scale(1.07);
+}
+
+.services Section .card .content .icon,
+p {
+    padding: 5px 0;
+    color: #a1a1aa;
+}
+
+.services Section .card .content .icon i {
+    font-size: 40px;
+}
+
+.services Section .card:hover .content .title {
+    color: white;
+}
+
+.services Section .card .content .title {
+    padding: 5px 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    transition: 0.3s;
+}
+
+/*End Services*/
+
+
+
+/*start Portoflio*/
+
+
+.portoflio {
+    margin: auto;
+    text-align: center;
+    margin-top: 80px;
+}
+
+
+.portoflio Section {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    grid-gap: 20px;
+}
+
+.portoflio Section .card {
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 600px);
+    height: 300px;
+    margin-bottom: 32px;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    color: #000;
+    transform: translateZ(0);
+}
+
+
+.portoflio Section .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+    transition: transform 0.2s;
+}
+
+
+.portoflio Section .card__action {
+    position: absolute;
+    width: calc(var(--size) * 0.15);
+    bottom: 30%;
+    right: 1.5rem;
+
+    background: purple;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    background: hsl(0 0% 100% / 0.5);
+    /*   backdrop-filter: blur(calc(var(--blur) * 0.5)); */
+    transition: transform 0.2s;
+}
+
+.portoflio Section .card__action svg {
+    width: 50%;
+}
+
+.portoflio Section .card__footer span:nth-of-type(1) {
+    font-size: calc(var(--size) * 0.065);
+}
+
+.portoflio Section .card__footer span:nth-of-type(2) {
+    font-size: calc(var(--size) * 0.035);
+}
+
+.portoflio Section .card:hover .card__img {
+    --hover: 1;
+    filter: blur(5px);
+}
+
+
+/*End Portoflio*/
+
+
+
+/*start contact*/
+
+
+#contact {
+    width: 100%;
+}
+
+
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+}
+
+/* Left contact page */
+.form-horizontal {
+    /*float: left;*/
+    max-width: 400px;
+    font-weight: 400;
+}
+
+.form-control,
+textarea {
+    max-width: 400px;
+    background-color: transparent;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.form-control::placeholder {
+    color: #a1a1aa;
+}
+
+.send-button {
+    margin-top: 15px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+    width: 400px;
+    height: 34px;
+    transition: all .2s ease-in-out;
+}
+
+.send-text {
+    display: block;
+    margin-top: 10px;
+    font: 700 12px 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+/* Begin Right Contact Page */
+.direct-contact-container {
+    max-width: 400px;
+}
+
+/* Location, Phone, Email Section */
+.contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+}
+
+.list-item {
+    line-height: 4;
+    color: #aaa;
+}
+
+.contact-text {
+    font: 300 18px 'Lato', sans-serif;
+    letter-spacing: 1.9px;
+    color: #bbb;
+}
+
+.place {
+    margin-left: 62px;
+}
+
+.phone {
+    margin-left: 56px;
+}
+
+.gmail {
+    margin-left: 53px;
+}
+
+.contact-text a {
+    color: #bbb;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-media-list li a {
+    color: #fff;
+}
+
+.social-media-list li {
+    position: relative;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+    background-color: #fff;
+}
+
+.social-media-list li:hover:after {
+    opacity: 1;
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+.social-media-list li:hover a {
+    color: #000;
+}
+
+.copyright {
+    font: 200 14px 'Oswald', sans-serif;
+    color: #555;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, .6);
+}
+
+/*End contact*/
+
+
+footer {
+    background: #18181b;
+    padding-inline: 5px;
+}
+
+
+
+@media (screen) {}
+
+
+@keyframes transform {
+    0% {
+        transform: translateY(5px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+
+    }
+
+    100% {
+        transform: translateY(5px);
+
+    }
+}
