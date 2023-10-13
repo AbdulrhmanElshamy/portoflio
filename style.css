@@ -35,6 +35,15 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
+
+
 /*start nav*/
 nav {
     width: 100%;
@@ -65,6 +74,12 @@ nav li:hover {
 
 #logo h1 {
     font-family: 'Rock Salt', cursive;
+    color: white;
+}
+
+nav .menu {
+    display: none;
+    font-size: 24px;
     color: white;
 }
 
@@ -140,7 +155,7 @@ nav li:hover {
 }
 
 #About .Aboutcard p {
-    max-width: 50%;
+    width: 50%;
     color: #a1a1aa;
 }
 
@@ -317,92 +332,17 @@ p {
 
 
 .contact-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    max-width: 840px;
+    width: 90%;
 }
 
-/* Left contact page */
-.form-horizontal {
-    /*float: left;*/
-    max-width: 400px;
-    font-weight: 400;
-}
-
-.form-control,
-textarea {
-    max-width: 400px;
-    background-color: transparent;
-    color: #fff;
-    letter-spacing: 1px;
-}
-
-.form-control::placeholder {
-    color: #a1a1aa;
-}
-
-.send-button {
-    margin-top: 15px;
-    height: 34px;
-    width: 400px;
-    overflow: hidden;
-    transition: all .2s ease-in-out;
-}
-
-.alt-send-button {
-    width: 400px;
-    height: 34px;
-    transition: all .2s ease-in-out;
-}
-
-.send-text {
-    display: block;
-    margin-top: 10px;
-    font: 700 12px 'Lato', sans-serif;
-    letter-spacing: 2px;
-}
-
-.alt-send-button:hover {
-    transform: translate3d(0px, -29px, 0px);
-}
 
 /* Begin Right Contact Page */
 .direct-contact-container {
-    max-width: 400px;
-}
-
-/* Location, Phone, Email Section */
-.contact-list {
-    list-style-type: none;
-    margin-left: -30px;
-    padding-right: 20px;
-}
-
-.list-item {
-    line-height: 4;
-    color: #aaa;
-}
-
-.contact-text {
-    font: 300 18px 'Lato', sans-serif;
-    letter-spacing: 1.9px;
-    color: #bbb;
-}
-
-.place {
-    margin-left: 62px;
-}
-
-.phone {
-    margin-left: 56px;
-}
-
-.gmail {
-    margin-left: 53px;
+    width: 100%;
+    margin: auto;
 }
 
 .contact-text a {
@@ -455,6 +395,7 @@ textarea {
     line-height: 60px;
     border-radius: 50%;
     opacity: 0;
+    z-index: -1;
     box-shadow: 0 0 0 1px #fff;
     transition: all .2s ease-in-out;
 }
@@ -494,7 +435,59 @@ footer {
 
 
 
-@media (screen) {}
+@media (min-width: 835px) and (max-width: 1020px) {
+
+    #About .Aboutcard p {
+        width: 40%;
+    }
+
+    #About .Aboutcard #AboutPic {
+        width: 60%;
+        overflow: hidden;
+    }
+
+
+
+}
+
+
+@media (max-width: 835px) {
+
+    #About .Aboutcard {
+        flex-direction: column;
+    }
+
+    #About .Aboutcard p {
+        width: 100%;
+    }
+
+    #About .Aboutcard #AboutPic {
+        width: 100%;
+    }
+
+    #About .Aboutcard #AboutPic img {
+        transform: translateX(0%);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    nav ul {
+        position: absolute;
+
+        display: flex;
+        flex-direction: column;
+        background-color: #18181b7e;
+        top: 0;
+        bottom: 0;
+    }
+
+    nav .menu {
+        display: block;
+    }
+
+}
 
 
 @keyframes transform {

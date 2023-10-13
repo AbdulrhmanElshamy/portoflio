@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    $(window).resize(function () {
+
+        if ($(this).width() > 835) {
+            $('#AboutPic img').css("transform", "translateX(18%)");
+        } else {
+            $('#AboutPic img').css("transform", "translateX(0%)");
+        }
+
+    });
+
     // Transition effect for navbar 
     $(window).scroll(function () {
         // checks if window is scrolled more than 500px, adds/removes solid class
@@ -7,7 +17,11 @@ $(document).ready(function () {
             $('nav').addClass('nav-solid');
             $('.bi-rocket-takeoff').css("right", "1%");
             $('.bi-rocket-takeoff').css("display", "block");
-            $('#AboutPic img').css("transform", "translateX(18%)");
+            if ($(this).width() > 835) {
+                $('#AboutPic img').css("transform", "translateX(18%)");
+            } else {
+                $('#AboutPic img').css("transform", "translateX(0%)");
+            }
 
         } else {
             $('nav').removeClass('nav-solid');
@@ -15,7 +29,12 @@ $(document).ready(function () {
             $('.bi-rocket-takeoff').css("display", "none");
             $('.bi-rocket-takeoff').css("bottom", "2%");
             $('.bi-rocket-takeoff').css("font-size", "40px");
-            $('#AboutPic img').css("transform", "translateX(87%)");
+            if ($(this).width() > 835) {
+
+                $('#AboutPic img').css("transform", "translateX(87%)");
+            } else {
+                $('#AboutPic img').css("transform", "translateX(0%)");
+            }
 
 
         }
